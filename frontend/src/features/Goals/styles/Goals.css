@@ -1,0 +1,35 @@
+.gl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 1000px) { .gl-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 650px) { .gl-grid { grid-template-columns: 1fr; } }
+
+.gl-list { display: flex; flex-direction: column; gap: 18px; }
+.gl-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  margin-bottom: 6px;
+}
+.gl-item-done { text-decoration: line-through; color: var(--color-text-muted); }
+
+.gl-increment {
+  border: none;
+  background: var(--color-bg-section);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+.gl-increment:hover:not(:disabled) { background: var(--color-primary-light); }
+.gl-increment:disabled { color: var(--color-text-muted); cursor: not-allowed; }
+
+.gl-item-count { font-size: 0.74rem; color: var(--color-text-secondary); margin-top: 4px; display: inline-block; }

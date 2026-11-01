@@ -1,0 +1,48 @@
+.nc-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .nc-grid { grid-template-columns: 1fr; }
+}
+
+.nc-roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 480px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.nc-roadmap-row-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+.nc-roadmap-count { color: var(--color-text-secondary); font-size: 0.8rem; }
+
+.nc-donut-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nc-donut-center {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nc-donut-pct { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; }
+.nc-donut-label { font-size: 0.76rem; color: var(--color-text-secondary); }

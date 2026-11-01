@@ -1,0 +1,36 @@
+.table-wrap {
+  overflow-x: auto;
+}
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.cs-table th {
+  text-align: left;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.cs-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  vertical-align: middle;
+}
+
+.cs-table tbody tr:hover {
+  background: var(--color-bg-section);
+}
+
+.cs-table tbody tr:last-child td {
+  border-bottom: none;
+}

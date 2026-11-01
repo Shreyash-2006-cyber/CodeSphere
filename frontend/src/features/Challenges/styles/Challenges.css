@@ -1,0 +1,41 @@
+.ch-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.ch-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 950px) {
+  .ch-layout { grid-template-columns: 1fr; }
+}
+
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 650px) { .ch-grid { grid-template-columns: 1fr; } }
+
+.ch-card { display: flex; flex-direction: column; gap: 12px; }
+.ch-card-top { display: flex; justify-content: space-between; }
+.ch-card h4 { font-size: 0.95rem; }
+
+.ch-card-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+.ch-card-meta span { display: flex; align-items: center; gap: 5px; }
+
+.ch-leaderboard { display: flex; flex-direction: column; gap: 12px; }
+.ch-leaderboard-row { display: flex; align-items: center; gap: 10px; }
+.ch-leaderboard-name { flex: 1; font-size: 0.86rem; }
+.ch-leaderboard-score { font-size: 0.8rem; color: var(--color-text-secondary); font-weight: 600; }

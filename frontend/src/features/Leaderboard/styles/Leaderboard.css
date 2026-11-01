@@ -1,0 +1,50 @@
+.lb-podium-card {
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px 12px !important;
+}
+
+.lb-podium {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.lb-podium-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.lb-podium-item strong { font-size: 0.88rem; margin-top: 4px; }
+.lb-podium-item span { font-size: 0.76rem; color: var(--color-text-secondary); }
+
+.lb-podium-bar {
+  margin-top: 10px;
+  width: 84px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
+}
+
+.lb-podium-first .lb-podium-bar { height: 96px; background: linear-gradient(180deg, var(--color-primary), var(--color-primary-dark)); }
+.lb-podium-second .lb-podium-bar { height: 68px; background: linear-gradient(180deg, #64748b, #475569); }
+.lb-podium-third .lb-podium-bar { height: 52px; background: linear-gradient(180deg, #d97706, #b45309); }
+
+.lb-crown { color: var(--color-warning); font-size: 1.3rem; margin-bottom: -4px; }
+
+.lb-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.lb-search { max-width: 280px; flex: 1; }
+.lb-filters { display: flex; gap: 10px; }
