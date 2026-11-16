@@ -44,7 +44,7 @@ export default function Settings() {
     e.preventDefault();
     setSaving(true);
     try {
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5001/api";
+      const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:5001/api").replace(/\/+$/, "");
       const res = await axios.put(`${API_BASE}/auth/update`, accountForm, {
         headers: { Authorization: `Bearer ${token}` }
       });

@@ -3,8 +3,10 @@ import axios from "axios";
 // Single Axios instance for the whole app. Once a backend exists,
 // only baseURL/interceptors here need to change — features already
 // import their calls through this client.
+const API_BASE = (import.meta.env.VITE_API_BASE_URL || "http://localhost:5001/api").replace(/\/+$/, "");
+
 export const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:5001/api",
+  baseURL: API_BASE,
   timeout: 10000,
   headers: { "Content-Type": "application/json" },
 });

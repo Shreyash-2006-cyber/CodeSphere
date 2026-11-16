@@ -1,0 +1,21 @@
+services:
+  # Option 1: Unified Web Service (Backend + Static Frontend)
+  - type: web
+    name: codesphere
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: VITE_API_BASE_URL
+        value: /api
+      - key: GITHUB_TOKEN
+        sync: false
