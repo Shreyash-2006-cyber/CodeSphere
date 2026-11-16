@@ -5,14 +5,23 @@ const fs = require("fs");
 
 const app = express();
 
-// Determine allowed CORS origins
-const allowedOrigins = process.env.CLIENT_URL
-  ? process.env.CLIENT_URL.split(",").map((url) => url.trim())
-  : true;
-
+// Determine allowed CORS origins dynamically to support Vercel deployments and credentials
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      // Allow requests with no origin (e.g. curl, server-to-server)
+      if (!origin) return callback(null, true);
+
+      if (process.env.CLIENT_URL && process.env.CLIENT_URL !== "*") {
+        const allowed = process.env.CLIENT_URL.split(",").map((url) => url.trim());
+        if (allowed.includes(origin) || origin.endsWith(".vercel.app") || origin.includes("localhost")) {
+          return callback(null, true);
+        }
+      }
+
+      // Default: reflect origin so credentials: true works seamlessly
+      return callback(null, true);
+    },
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
