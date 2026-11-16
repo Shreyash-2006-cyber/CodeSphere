@@ -4,7 +4,8 @@ const User = require("../models/User");
 
 // Helper: generate JWT
 const generateToken = (userId) => {
-  return jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: "30d" });
+  const secret = process.env.JWT_SECRET || "codesphere_jwt_production_secret_key_2026";
+  return jwt.sign({ id: userId }, secret, { expiresIn: "30d" });
 };
 
 // Helper: build safe user payload (no password)
